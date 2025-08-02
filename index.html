@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <title>H4RK CREW</title>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+        box-sizing: border-box;
+        color: black;
+      }
+      body {
+        all: unset;
+      }
+      body {
+  background-color: #dbe2ef; /* Biru kelabu lembut */
+}
+      nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        background-color: #2B6FD2;
+        box-shadow:0 0 12px rgba(0,0,0,0.3);
+      }
+      nav h1, nav a{
+      color:white;
+		}
+      nav a {
+        text-decoration: none;
+      }
+      nav ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+      }
+      nav ul li {
+        margin: 0 10px;
+      }
+      #menuBtn {
+        user-select: none;
+        font-size: 30px;
+        margin: 12px 0;
+        display: none;
+        padding: 0 10px;
+      }
+      @media (max-width: 600px) {
+        nav {
+          position: relative;
+        }
+        nav ul {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          background-color: gray;
+          padding: 0;
+          top: 52px;
+          right: 0;
+          display: none;
+          box-shadow:0 3px 7px rgba(0,0,0,0.255);
+          z-index:999;
+        }
+        nav ul li {
+          padding:0;
+          margin: 0;
+        }
+        nav ul li a {
+          color:white;
+          padding: 12px 70px;
+          display: block;
+        }
+        nav ul li a:hover {
+          background-color: aliceblue;
+          color:black;
+        }
+        #menuBtn {
+          cursor: pointer;
+          display: block;
+        }
+        .clicked {
+          transition: 0.2s ease-in-out;
+          background-color: gray;
+          color: whitesmoke;
+        }
+      }
+      .hero{
+          margin:22px;
+          padding:20px;
+          border-radius:15px;
+          border:solid gray 1px;
+          background-color:#e8e8e8;
+          box-shadow:0 3px 7px rgba(0,0,0,0.255);
+      }
+      .hero h2{
+          margin:0;
+          padding:0;
+      }
+      .hero p{
+          margin:5px 0;
+      }
+      .btn{
+        margin-top: 7px;
+        background-color:lightskyblue;
+        padding: 7px 16px;
+        color:black;
+        font-weight: 600;
+        border-radius: 14px;
+        border:solid 1px maroon;
+        box-shadow: 0 0 7px rgba(0,0,0,0.255);
+      }
+      .btn:hover{
+        color: whitesmoke;
+        background-color: darkblue;
+      }
+      .box{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.55);
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+      .box .content{
+        background-color: gray;
+        border: solid 2px black;
+        padding: 17px;
+        border-radius: 5px;
+        height:500px;
+        width:300px;
+        position: relative;
+      }
+      .box .content *{
+        color:whitesmoke;
+      }
+      .x{
+        position: absolute;
+        top:0;
+        right: 0;
+        padding: 7px 12px;
+        background: tomato;
+        color:black;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#"><h1>H4RK CREW</h1></a>
+      <ul>
+        <li><a href="#" id="about">About</a></li>
+        <li><a href="#" id="skills">Skills</a></li>
+        <li><a href="#" id="projects">Projects</a></li>
+        <li><a href="#" id="contact">Contact</a></li>
+        <li>
+          <a href="#" id="how">
+            How this page works
+          </a>
+        </li>
+      </ul>
+      <span id="menuBtn">&#9776;</span>
+    </nav>
+    
+    <div class="hero animate__animated animate__bounceIn">
+        <h2>Hello there! 👋🏻</h2>
+        <p>World is not forever, the doomsday is coming. Do every single things that beneficial to others.</p>
+    </div>
+        <div class="hero how" style="display: none;">
+        <h2>How this page works?</h2>
+        <p>The is page use jQuery framework for easier JavaScript DOM manipulation Vanilla CSS.</p>
+    </div>
+    <div class="hero about" style="display: none;">
+        <h2>About Me</h2>
+        <p>My name is Hakim</p>
+    </div>
+        <div class="hero skills" style="display: none;">
+        <h2>My Skills</h2>
+        <p>I am interesting with Coding and CyberSecurity.</p>
+        <p></p>
+    </div>
+        <div class="hero projects" style="display: none;">
+        <h2>Projects</h2>
+        <button class="btn antena">Antena length</button>
+        <button class="btn ohm">Ohm's Laws</button>
+    </div>
+        <div class="hero contact" style="display: none;">
+        <h2>Contact Me</h2>
+        <a href="https://t.me/nagacukur" target="_blank" rel="noreferrer">https://t.me/nagacukur</a>
+    </div>
+<div class="box">
+  <div class="content">
+    <button class="x">×</button>
+    <h1>Antena for signal communication</h1>
+    <form id="antena">
+    <label for="frequency">Frequency (Hz) :</label>
+    <input type="text" id="frequency" placeholder="Enter frequency (hz)..." style="color:black"/>
+    <p id="output"></p>
+    <button type="submit" class="btn">Calculate</button>
+    </form>
+  </div>
+</div>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $('#menuBtn').click(function () {
+        $('#menuBtn').toggleClass('clicked')
+        $('nav ul').fadeToggle(200)
+      })
+      $("#about").click((e)=>{
+         e.preventDefault()
+         $(".skills").add(".contact").add(".projects").hide(500)
+         $(".about").show(500)
+      })
+      $("#skills").click((e)=>{
+         e.preventDefault()
+         $(".about").add(".contact").add(".projects").hide(500)
+         $(".skills").show(500)
+      })
+      $("#projects").click((e)=>{
+		$(".about").add(".skills").add(".contact").hide(500)
+		$(".projects").show(500)
+})
+$("#contact").click((e)=>{
+	    $(".about").add(".skills").add(".projects").hide(500)
+		$(".contact").show(500)
+})
+$("#how").click((e)=>{
+         e.preventDefault()
+         $(".skills").add(".contact").add(".projects").hide(500)
+         $(".how").show(500)
+      })
+
+$(".projects .antena").click((e)=>{
+  $('nav ul').hide()
+  $(".box").fadeIn(100)
+  $(".box").css("display","flex")
+})
+
+$("#antena").on('submit',(e)=>{
+  e.preventDefault()
+  var freq = Number($("#frequency").val())
+  if(isNaN(freq) || freq < 0 || freq === 0){
+    alert("Must be valid value!")
+    return
+  }
+  var length_antena = 1/10*(3e8/freq)
+  var length_wave = 3e8/freq
+  $("#output").html(`Antena Length: ${length_antena} meter<br>Wave Length: ${length_wave} meter`)
+})
+$(".x").click((e)=>{
+  $(".box").fadeOut(100)
+})
+
+$(".ohm").click(()=>alert("Coming soon"))
+    </script>
+  </body>
+  </html>
+  
